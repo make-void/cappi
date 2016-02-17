@@ -1,5 +1,12 @@
-# React + Redux Boilerplate bundled with Rollup
+# Cappi Work
 
+Accademia-Cappiello student network and work portal 
+
+#### fork of <https://github.com/makevoid/react-redux-rollup-boilerplate>
+
+----
+
+ORIGINAL Readme.md
 
 ### Setup:
 
