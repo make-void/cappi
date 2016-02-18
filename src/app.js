@@ -7,33 +7,26 @@ import store from './store/store'
 import Address    from './comp/address'
 import Example    from './comp/example'
 import CounterBtn from './comp/counter_btn'
+import AddressBalance    from './comp/address_balance'
 
 
 const c = console
 const d = document
 
 
-// store & controller (redux)
-
-
-// window.store = store
-
-
-
-// views (react)
+// main render (main react element)
 
 const mainRender = () => {
   render(
     <div>
-      <h1>Capp2Work!!!!1!!1!</h1>
+      <h1>Capp.work</h1>
       <Conn store={store}>
         <div>
           <Example />
-          <Address />
+          <AddressBalance />
           <CounterBtn />
         </div>
       </Conn>
-
     </div>,
     d.querySelector('.container')
   )

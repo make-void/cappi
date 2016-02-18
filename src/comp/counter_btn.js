@@ -2,9 +2,6 @@ import React from 'React'
 import Comp from '../lib/comp'
 import store from '../store/store'
 
-console.log(store)
-console.log("aaa")
-
 class CounterBtn extends Comp {
   handleClick(event) {
     store.dispatch({ type: 'INCR' })

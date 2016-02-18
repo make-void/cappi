@@ -2,8 +2,9 @@ import React from 'React'
 import Comp from '../lib/comp'
 import { PrivateKey } from 'Bitcore'
 
-class Address extends Comp {
+class AddressStore extends Comp {
   address() {
+    // TODO: localstorage
     return new PrivateKey().toAddress().toString()
   }
   render() {
@@ -13,4 +14,4 @@ class Address extends Comp {
   }
 }
 
-export default Address
+export default AddressStore
