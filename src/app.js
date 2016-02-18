@@ -1,7 +1,11 @@
 import { createStore } from 'Redux'
 import React from 'React'
 import { render } from 'ReactDOM'
-import { Provider } from 'ReactRedux'
+import { Provider as Conn } from 'ReactRedux' // Connector
+
+// components
+import Address from './comp/address'
+import Example from './comp/example'
 
 
 const c = console
@@ -49,33 +53,27 @@ const CounterButton = React.createClass({
   }
 })
 
-const Counter = React.createClass({
-  contextTypes: {
-    store: React.PropTypes.object
-  },
 
-  render() {
-    return (
-      <div>
-        Counter:
-        <h4>{this.context.store.getState()}</h4>
-      </div>
-    )
-  }
-})
+
+
 
 const mainRender = () => {
   render(
     <div>
-      <h1>Hello Rollup+React+Redux!</h1>
-      <Provider store={store}>
-        <Counter />
-      </Provider>
+      <h1>Capp2Work!!!!1!!1!</h1>
+      <Conn store={store}>
+        <div>
+          <Example />
+          <Address />
+        </div>
+      </Conn>
+
       <CounterButton />
     </div>,
     d.querySelector('.container')
   )
 }
+
 
 // main render
 
