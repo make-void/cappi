@@ -1,11 +1,12 @@
-import { createStore } from 'Redux'
 import React from 'React'
 import { render } from 'ReactDOM'
 import { Provider as Conn } from 'ReactRedux' // Connector
+import store from './store/store'
 
-// components
-import Address from './comp/address'
-import Example from './comp/example'
+// components // TODO: autoimport
+import Address    from './comp/address'
+import Example    from './comp/example'
+import CounterBtn from './comp/counter_btn'
 
 
 const c = console
@@ -14,48 +15,12 @@ const d = document
 
 // store & controller (redux)
 
-let init = false
 
-const counter = (state = 0, action) => {
-  switch (action.type) {
-    case "INCR":
-      return state + 1
-    case "INCR":
-      return state - 1
-    default:
-      if (init)
-        console.log(`action: ${action.type} - no state change`)
-      init = true
-      return state
-  }
-}
-
-const store = createStore(counter)
-window.store = store
+// window.store = store
 
 
 
 // views (react)
-
-
-// components
-
-const CounterButton = React.createClass({
-  handleClick(event) {
-    store.dispatch({ type: 'INCR' })
-  },
-  render() {
-    return (
-      <button onClick={this.handleClick}>
-        Incr
-      </button>
-    )
-  }
-})
-
-
-
-
 
 const mainRender = () => {
   render(
@@ -65,10 +30,10 @@ const mainRender = () => {
         <div>
           <Example />
           <Address />
+          <CounterBtn />
         </div>
       </Conn>
 
-      <CounterButton />
     </div>,
     d.querySelector('.container')
   )
