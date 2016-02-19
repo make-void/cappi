@@ -8,6 +8,8 @@ const counter = (state = 0, action) => {
       return state + 1
     case "INCR":
       return state - 1
+    case "BALANCE":
+      return action.value
     default:
       if (init)
         console.log(`action: ${action.type} - no state change`)
