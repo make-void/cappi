@@ -12,8 +12,6 @@ import AddressBalance    from './comp/address_balance'
 // api
 import BCypz from './api/blockcypher'
 
-
-
 const c = console
 const d = document
 
@@ -28,6 +26,7 @@ const mainRender = () => {
         <div>
           <Example />
           <AddressBalance />
+          <div className="s20"></div>
           <CounterBtn />
         </div>
       </Conn>

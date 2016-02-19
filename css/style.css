@@ -604,3 +604,10 @@ h6 {
 .clearfix:after {
   clear: both;
 }
+
+.s5{  height: 5px;  }
+.s10{ height: 10px; }
+.s20{ height: 20px; }
+.s30{ height: 30px; }
+.s40{ height: 40px; }
+.s50{ height: 50px; }
