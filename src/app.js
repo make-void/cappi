@@ -23,7 +23,7 @@ const d = document
 const mainRender = () => {
   render(
     <div>
-      <h1>Capp.work</h1>
+      <h5>Cappi.work</h5>
       <Conn store={store}>
         <div>
           <Example />
@@ -54,6 +54,10 @@ const getBalance = (address) => {
   return new BCypz(address).balance()
 }
 
+const getUTXOs = (address) => {
+  return new BCypz(address).utxos()
+}
+
 // TODO: load from localstorage
 import { PrivateKey } from 'Bitcore'
 
@@ -64,4 +68,13 @@ getBalance(address)
     balance = balance.unconfirmed_balance
     console.log("unconfirmed_balance:", balance)
     store.dispatch({ type: 'BALANCE', value: balance })
+  })
+  // .catch()
+
+getUTXOs(address)
+  .then((utxos) => {
+    c.log("UTXOS:", utxos)
+    // balance = balance.unconfirmed_balance
+    // console.log("unconfirmed_balance:", balance)
+    // store.dispatch({ type: 'BALANCE', value: balance })
   })
